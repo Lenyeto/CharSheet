@@ -56,10 +56,54 @@ namespace CharacterSheet
             point.Y = label1.Location.Y + label1.Height / 2;
             toolTip.Show(web, point);
         }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            CurHitPoints.Text = trackBar1.Value.ToString();
+        }
+
+        private void MaxHitPoints_TextChanged(object sender, EventArgs e)
+        {
+            int result = 1;
+            if (int.TryParse(MaxHitPoints.Text, out result))
+            {
+                if (result > 1000)
+                {
+                    result = 1000;
+                }
+                trackBar1.Maximum = result;
+                MaxHitPoints.Text = result.ToString();
+            }
+            else
+            {
+                //MaxHitPoints.Text = 1.ToString();
+                trackBar1.Maximum = 1;
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (treeView1.SelectedNode != null)
+                treeView1.SelectedNode.Nodes.Add("TEST");
+            
+        }
+
+        private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (toolStripTextBox1.Text == "")
+                    return;
+                if (treeView1.SelectedNode != null)
+                {
+                    treeView1.SelectedNode.Nodes.Add(toolStripTextBox1.Text);
+                    toolStripTextBox1.Text = "";
+                }
+            }
+        }
     }
 
     class WebBrowserToolTip2 : ToolStripDropDown
-
     {
 
         public Control ctl;
