@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
@@ -153,9 +153,9 @@
             "D8",
             "D10",
             "D12"});
-            this.comboBox1.Location = new System.Drawing.Point(80, 0);
+            this.comboBox1.Location = new System.Drawing.Point(111, 9);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(50, 21);
+            this.comboBox1.Size = new System.Drawing.Size(20, 21);
             this.comboBox1.TabIndex = 10;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -174,13 +174,13 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Equipment";
-            treeNode1.Text = "Equipment";
-            treeNode2.Name = "Weapons";
-            treeNode2.Text = "Weapons";
+            treeNode3.Name = "Equipment";
+            treeNode3.Text = "Equipment";
+            treeNode4.Name = "Weapons";
+            treeNode4.Text = "Weapons";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
+            treeNode3,
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(261, 308);
             this.treeView1.TabIndex = 1;
             // 
@@ -514,7 +514,7 @@
             this.StrengthBox.Size = new System.Drawing.Size(84, 80);
             this.StrengthBox.TabIndex = 10;
             this.StrengthBox.TabStop = false;
-            this.StrengthBox.Text = "groupBox8";
+            this.StrengthBox.Text = "Strength";
             // 
             // DexBox
             // 
@@ -523,7 +523,7 @@
             this.DexBox.Size = new System.Drawing.Size(84, 80);
             this.DexBox.TabIndex = 11;
             this.DexBox.TabStop = false;
-            this.DexBox.Text = "groupBox9";
+            this.DexBox.Text = "Dexterity";
             // 
             // ConBox
             // 
@@ -532,7 +532,7 @@
             this.ConBox.Size = new System.Drawing.Size(84, 80);
             this.ConBox.TabIndex = 11;
             this.ConBox.TabStop = false;
-            this.ConBox.Text = "groupBox14";
+            this.ConBox.Text = "Constitution";
             // 
             // IntelligenceBox
             // 
@@ -541,7 +541,7 @@
             this.IntelligenceBox.Size = new System.Drawing.Size(84, 80);
             this.IntelligenceBox.TabIndex = 11;
             this.IntelligenceBox.TabStop = false;
-            this.IntelligenceBox.Text = "groupBox18";
+            this.IntelligenceBox.Text = "Intelligence";
             // 
             // WisdomBox
             // 
@@ -550,7 +550,7 @@
             this.WisdomBox.Size = new System.Drawing.Size(84, 80);
             this.WisdomBox.TabIndex = 11;
             this.WisdomBox.TabStop = false;
-            this.WisdomBox.Text = "groupBox19";
+            this.WisdomBox.Text = "Wisdom";
             // 
             // CharismaBox
             // 
@@ -559,7 +559,7 @@
             this.CharismaBox.Size = new System.Drawing.Size(84, 80);
             this.CharismaBox.TabIndex = 11;
             this.CharismaBox.TabStop = false;
-            this.CharismaBox.Text = "groupBox20";
+            this.CharismaBox.Text = "Charisma";
             // 
             // Form1
             // 
