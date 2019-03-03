@@ -37,7 +37,7 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.addEquipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.combatStats = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
@@ -60,7 +60,7 @@
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.combatStats.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             // 
             this.CorePage.Controls.Add(this.groupBox17);
             this.CorePage.Controls.Add(this.groupBox16);
-            this.CorePage.Controls.Add(this.groupBox8);
+            this.CorePage.Controls.Add(this.combatStats);
             this.CorePage.Controls.Add(this.groupBox7);
             this.CorePage.Controls.Add(this.groupBox6);
             this.CorePage.Controls.Add(this.groupBox5);
@@ -141,21 +141,21 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Attacks and Spellcasting";
             // 
-            // groupBox8
+            // combatStats
             // 
-            this.groupBox8.Controls.Add(this.groupBox15);
-            this.groupBox8.Controls.Add(this.groupBox14);
-            this.groupBox8.Controls.Add(this.groupBox13);
-            this.groupBox8.Controls.Add(this.groupBox12);
-            this.groupBox8.Controls.Add(this.groupBox11);
-            this.groupBox8.Controls.Add(this.groupBox10);
-            this.groupBox8.Controls.Add(this.armorClass);
-            this.groupBox8.Location = new System.Drawing.Point(253, 7);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(274, 418);
-            this.groupBox8.TabIndex = 7;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
+            this.combatStats.Controls.Add(this.groupBox15);
+            this.combatStats.Controls.Add(this.groupBox14);
+            this.combatStats.Controls.Add(this.groupBox13);
+            this.combatStats.Controls.Add(this.groupBox12);
+            this.combatStats.Controls.Add(this.groupBox11);
+            this.combatStats.Controls.Add(this.groupBox10);
+            this.combatStats.Controls.Add(this.armorClass);
+            this.combatStats.Location = new System.Drawing.Point(253, 7);
+            this.combatStats.Name = "combatStats";
+            this.combatStats.Size = new System.Drawing.Size(274, 418);
+            this.combatStats.TabIndex = 7;
+            this.combatStats.TabStop = false;
+            this.combatStats.Text = "Combat Info";
             // 
             // groupBox15
             // 
@@ -334,7 +334,7 @@
             this.groupBox17.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
+            this.combatStats.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
@@ -357,7 +357,7 @@
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox combatStats;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox13;
