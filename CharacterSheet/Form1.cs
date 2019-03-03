@@ -101,6 +101,19 @@ namespace CharacterSheet
                 }
             }
         }
+
+        private void HitDiceLabel_Click(object sender, EventArgs e)
+        {
+            HitDiceLabel.Text = comboBox1.Text;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+            String mString = comboBox1.Text.Substring(1);
+            HitDiceLabel.Text = mString;
+        }
     }
 
     class WebBrowserToolTip2 : ToolStripDropDown

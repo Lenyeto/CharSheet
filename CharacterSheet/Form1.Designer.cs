@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
+            this.HitDiceLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -45,10 +47,12 @@
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.combatStats = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.HitDiceBox = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.MaxHitPoints = new System.Windows.Forms.TextBox();
             this.CurHitPoints = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -58,30 +62,35 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.BioPage = new System.Windows.Forms.TabPage();
             this.SpellsPage = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.MaxHitPoints = new System.Windows.Forms.TextBox();
+            this.StrengthBox = new System.Windows.Forms.GroupBox();
+            this.DexBox = new System.Windows.Forms.GroupBox();
+            this.ConBox = new System.Windows.Forms.GroupBox();
+            this.IntelligenceBox = new System.Windows.Forms.GroupBox();
+            this.WisdomBox = new System.Windows.Forms.GroupBox();
+            this.CharismaBox = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.combatStats.SuspendLayout();
+            this.HitDiceBox.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,6 +106,12 @@
             // 
             // CorePage
             // 
+            this.CorePage.Controls.Add(this.CharismaBox);
+            this.CorePage.Controls.Add(this.WisdomBox);
+            this.CorePage.Controls.Add(this.IntelligenceBox);
+            this.CorePage.Controls.Add(this.ConBox);
+            this.CorePage.Controls.Add(this.DexBox);
+            this.CorePage.Controls.Add(this.StrengthBox);
             this.CorePage.Controls.Add(this.groupBox17);
             this.CorePage.Controls.Add(this.groupBox16);
             this.CorePage.Controls.Add(this.combatStats);
@@ -115,6 +130,35 @@
             this.CorePage.Text = "Core";
             this.CorePage.UseVisualStyleBackColor = true;
             // 
+            // HitDiceLabel
+            // 
+            this.HitDiceLabel.AutoSize = true;
+            this.HitDiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HitDiceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HitDiceLabel.Location = new System.Drawing.Point(48, 24);
+            this.HitDiceLabel.Name = "HitDiceLabel";
+            this.HitDiceLabel.Size = new System.Drawing.Size(39, 42);
+            this.HitDiceLabel.TabIndex = 11;
+            this.HitDiceLabel.Text = "0";
+            this.HitDiceLabel.Click += new System.EventHandler(this.HitDiceLabel_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "sds";
+            this.comboBox1.DropDownWidth = 50;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "D4",
+            "D6",
+            "D8",
+            "D10",
+            "D12"});
+            this.comboBox1.Location = new System.Drawing.Point(80, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(50, 21);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // groupBox17
             // 
             this.groupBox17.Controls.Add(this.treeView1);
@@ -130,13 +174,13 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode13.Name = "Equipment";
-            treeNode13.Text = "Equipment";
-            treeNode14.Name = "Weapons";
-            treeNode14.Text = "Weapons";
+            treeNode1.Name = "Equipment";
+            treeNode1.Text = "Equipment";
+            treeNode2.Name = "Weapons";
+            treeNode2.Text = "Weapons";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
+            treeNode1,
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(261, 308);
             this.treeView1.TabIndex = 1;
             // 
@@ -210,7 +254,7 @@
             // combatStats
             // 
             this.combatStats.Controls.Add(this.groupBox15);
-            this.combatStats.Controls.Add(this.groupBox14);
+            this.combatStats.Controls.Add(this.HitDiceBox);
             this.combatStats.Controls.Add(this.groupBox13);
             this.combatStats.Controls.Add(this.groupBox12);
             this.combatStats.Controls.Add(this.groupBox11);
@@ -232,14 +276,16 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Death Saves";
             // 
-            // groupBox14
+            // HitDiceBox
             // 
-            this.groupBox14.Location = new System.Drawing.Point(7, 339);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(130, 73);
-            this.groupBox14.TabIndex = 5;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Hit Dice";
+            this.HitDiceBox.Controls.Add(this.comboBox1);
+            this.HitDiceBox.Controls.Add(this.HitDiceLabel);
+            this.HitDiceBox.Location = new System.Drawing.Point(7, 339);
+            this.HitDiceBox.Name = "HitDiceBox";
+            this.HitDiceBox.Size = new System.Drawing.Size(130, 73);
+            this.HitDiceBox.TabIndex = 5;
+            this.HitDiceBox.TabStop = false;
+            this.HitDiceBox.Text = "Hit Dice";
             // 
             // groupBox13
             // 
@@ -273,6 +319,29 @@
             this.groupBox12.TabIndex = 3;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Currernt Hit Points";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
+            this.numericUpDown1.TabIndex = 14;
+            // 
+            // MaxHitPoints
+            // 
+            this.MaxHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaxHitPoints.Location = new System.Drawing.Point(161, 67);
+            this.MaxHitPoints.Name = "MaxHitPoints";
+            this.MaxHitPoints.Size = new System.Drawing.Size(94, 38);
+            this.MaxHitPoints.TabIndex = 13;
+            this.MaxHitPoints.Text = "40";
+            this.MaxHitPoints.TextChanged += new System.EventHandler(this.MaxHitPoints_TextChanged);
             // 
             // CurHitPoints
             // 
@@ -357,6 +426,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Flaws";
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox4.TabIndex = 0;
+            this.richTextBox4.Text = "";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.richTextBox3);
@@ -366,6 +443,14 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bonds";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(187, 80);
+            this.richTextBox3.TabIndex = 0;
+            this.richTextBox3.Text = "";
             // 
             // groupBox2
             // 
@@ -377,6 +462,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ideals";
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = "";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
@@ -386,6 +479,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personality Traits";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // BioPage
             // 
@@ -406,60 +507,59 @@
             this.SpellsPage.Text = "Spells";
             this.SpellsPage.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // StrengthBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.StrengthBox.Location = new System.Drawing.Point(6, 11);
+            this.StrengthBox.Name = "StrengthBox";
+            this.StrengthBox.Size = new System.Drawing.Size(84, 80);
+            this.StrengthBox.TabIndex = 10;
+            this.StrengthBox.TabStop = false;
+            this.StrengthBox.Text = "groupBox8";
             // 
-            // richTextBox2
+            // DexBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
+            this.DexBox.Location = new System.Drawing.Point(6, 97);
+            this.DexBox.Name = "DexBox";
+            this.DexBox.Size = new System.Drawing.Size(84, 80);
+            this.DexBox.TabIndex = 11;
+            this.DexBox.TabStop = false;
+            this.DexBox.Text = "groupBox9";
             // 
-            // richTextBox3
+            // ConBox
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(187, 80);
-            this.richTextBox3.TabIndex = 0;
-            this.richTextBox3.Text = "";
+            this.ConBox.Location = new System.Drawing.Point(6, 183);
+            this.ConBox.Name = "ConBox";
+            this.ConBox.Size = new System.Drawing.Size(84, 80);
+            this.ConBox.TabIndex = 11;
+            this.ConBox.TabStop = false;
+            this.ConBox.Text = "groupBox14";
             // 
-            // richTextBox4
+            // IntelligenceBox
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox4.TabIndex = 0;
-            this.richTextBox4.Text = "";
+            this.IntelligenceBox.Location = new System.Drawing.Point(6, 269);
+            this.IntelligenceBox.Name = "IntelligenceBox";
+            this.IntelligenceBox.Size = new System.Drawing.Size(84, 80);
+            this.IntelligenceBox.TabIndex = 11;
+            this.IntelligenceBox.TabStop = false;
+            this.IntelligenceBox.Text = "groupBox18";
             // 
-            // numericUpDown1
+            // WisdomBox
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
-            this.numericUpDown1.TabIndex = 14;
+            this.WisdomBox.Location = new System.Drawing.Point(6, 355);
+            this.WisdomBox.Name = "WisdomBox";
+            this.WisdomBox.Size = new System.Drawing.Size(84, 80);
+            this.WisdomBox.TabIndex = 11;
+            this.WisdomBox.TabStop = false;
+            this.WisdomBox.Text = "groupBox19";
             // 
-            // MaxHitPoints
+            // CharismaBox
             // 
-            this.MaxHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxHitPoints.Location = new System.Drawing.Point(161, 67);
-            this.MaxHitPoints.Name = "MaxHitPoints";
-            this.MaxHitPoints.Size = new System.Drawing.Size(94, 38);
-            this.MaxHitPoints.TabIndex = 13;
-            this.MaxHitPoints.Text = "40";
-            this.MaxHitPoints.TextChanged += new System.EventHandler(this.MaxHitPoints_TextChanged);
+            this.CharismaBox.Location = new System.Drawing.Point(6, 441);
+            this.CharismaBox.Name = "CharismaBox";
+            this.CharismaBox.Size = new System.Drawing.Size(84, 80);
+            this.CharismaBox.TabIndex = 11;
+            this.CharismaBox.TabStop = false;
+            this.CharismaBox.Text = "groupBox20";
             // 
             // Form1
             // 
@@ -477,16 +577,18 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.combatStats.ResumeLayout(false);
+            this.HitDiceBox.ResumeLayout(false);
+            this.HitDiceBox.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,7 +610,7 @@
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox combatStats;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox HitDiceBox;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -531,6 +633,14 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label HitDiceLabel;
+        private System.Windows.Forms.GroupBox CharismaBox;
+        private System.Windows.Forms.GroupBox WisdomBox;
+        private System.Windows.Forms.GroupBox IntelligenceBox;
+        private System.Windows.Forms.GroupBox ConBox;
+        private System.Windows.Forms.GroupBox DexBox;
+        private System.Windows.Forms.GroupBox StrengthBox;
     }
 }
 
