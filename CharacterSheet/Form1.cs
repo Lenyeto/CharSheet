@@ -14,6 +14,7 @@ namespace CharacterSheet
     {
         private WebBrowser web;
         private WebBrowserToolTip2 toolTip;
+        private Inventory inventory;
 
         public Form1()
         {
@@ -24,6 +25,8 @@ namespace CharacterSheet
             
             web.ScrollBarsEnabled = false;
             toolTip = new WebBrowserToolTip2(web);
+
+            inventory = new Inventory();
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -54,7 +57,7 @@ namespace CharacterSheet
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            CurHitPoints.Text = trackBar1.Value.ToString();
+            CurHitPoints.Value = trackBar1.Value;
         }
 
         private void MaxHitPoints_TextChanged(object sender, EventArgs e)
@@ -97,6 +100,26 @@ namespace CharacterSheet
             }
         }
 
+        private void MaxHitPoints_ValueChanged(object sender, EventArgs e)
+        {
+            trackBar1.Maximum = (int)MaxHitPoints.Value;
+            CurHitPoints.Value = trackBar1.Value;
+        }
+
+        private void CurHitPoints_ValueChanged(object sender, EventArgs e)
+        {
+            if (CurHitPoints.Value > MaxHitPoints.Value)
+            {
+                CurHitPoints.Value = MaxHitPoints.Value;
+            }
+
+            trackBar1.Value = (int)CurHitPoints.Value;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
         private void HitDiceLabel_Click(object sender, EventArgs e)
         {
             HitDiceLabel.Text = comboBox1.Text;

@@ -57,9 +57,11 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CurHitPoints = new System.Windows.Forms.NumericUpDown();
+            this.MaxHitPoints = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.MaxHitPoints = new System.Windows.Forms.TextBox();
-            this.CurHitPoints = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -84,6 +86,8 @@
             this.HitDiceBox.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.BioPage.SuspendLayout();
@@ -358,9 +362,10 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.numericUpDown1);
-            this.groupBox12.Controls.Add(this.MaxHitPoints);
+            this.groupBox12.Controls.Add(this.label3);
+            this.groupBox12.Controls.Add(this.label2);
             this.groupBox12.Controls.Add(this.CurHitPoints);
+            this.groupBox12.Controls.Add(this.MaxHitPoints);
             this.groupBox12.Controls.Add(this.trackBar1);
             this.groupBox12.Location = new System.Drawing.Point(7, 106);
             this.groupBox12.Name = "groupBox12";
@@ -369,6 +374,24 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Currernt Hit Points";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(134, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Max";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-1, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Current";
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,25 +405,38 @@
             this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
             this.numericUpDown1.TabIndex = 14;
             // 
+            // CurHitPoints
+            // 
+            this.CurHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurHitPoints.Location = new System.Drawing.Point(43, 67);
+            this.CurHitPoints.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.CurHitPoints.Name = "CurHitPoints";
+            this.CurHitPoints.Size = new System.Drawing.Size(87, 38);
+            this.CurHitPoints.TabIndex = 15;
+            this.CurHitPoints.ValueChanged += new System.EventHandler(this.CurHitPoints_ValueChanged);
+            // 
             // MaxHitPoints
             // 
             this.MaxHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxHitPoints.Location = new System.Drawing.Point(161, 67);
+            this.MaxHitPoints.Location = new System.Drawing.Point(170, 67);
+            this.MaxHitPoints.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.MaxHitPoints.Name = "MaxHitPoints";
-            this.MaxHitPoints.Size = new System.Drawing.Size(94, 38);
-            this.MaxHitPoints.TabIndex = 13;
-            this.MaxHitPoints.Text = "40";
-            this.MaxHitPoints.TextChanged += new System.EventHandler(this.MaxHitPoints_TextChanged);
-            // 
-            // CurHitPoints
-            // 
-            this.CurHitPoints.AutoSize = true;
-            this.CurHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurHitPoints.Location = new System.Drawing.Point(7, 67);
-            this.CurHitPoints.Name = "CurHitPoints";
-            this.CurHitPoints.Size = new System.Drawing.Size(29, 31);
-            this.CurHitPoints.TabIndex = 11;
-            this.CurHitPoints.Text = "0";
+            this.MaxHitPoints.Size = new System.Drawing.Size(85, 38);
+            this.MaxHitPoints.TabIndex = 14;
+            this.MaxHitPoints.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.MaxHitPoints.ValueChanged += new System.EventHandler(this.MaxHitPoints_ValueChanged);
             // 
             // trackBar1
             // 
@@ -533,6 +569,14 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
+            // BioPage
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // SpellsPage
             // 
             this.SpellsPage.Controls.Add(this.CantripsGroupBox);
@@ -577,6 +621,8 @@
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.BioPage.ResumeLayout(false);
@@ -609,7 +655,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Label CurHitPoints;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -617,8 +662,8 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.NumericUpDown MaxHitPoints;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox MaxHitPoints;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label HitDiceLabel;
         private System.Windows.Forms.GroupBox CharismaBox;
@@ -635,6 +680,9 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.NumericUpDown CurHitPoints;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox CantripsGroupBox;
     }
 }
