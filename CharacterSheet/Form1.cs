@@ -119,10 +119,10 @@ namespace CharacterSheet
 
             int x = MousePosition.X / 2;
             int y = MousePosition.Y / 2;
-
+            
             Point testPos = new Point(x, y);
-           
-            toolTip.Show(this, testPos);
+            
+            toolTip.Show(this, PointToClient(Cursor.Position));
             
             CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
             
