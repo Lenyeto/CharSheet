@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
-            this.HitDiceLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CharismaBox = new System.Windows.Forms.GroupBox();
+            this.WisdomBox = new System.Windows.Forms.GroupBox();
+            this.IntelligenceBox = new System.Windows.Forms.GroupBox();
+            this.ConBox = new System.Windows.Forms.GroupBox();
+            this.DexBox = new System.Windows.Forms.GroupBox();
+            this.StrengthBox = new System.Windows.Forms.GroupBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -48,6 +52,8 @@
             this.combatStats = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.HitDiceBox = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.HitDiceLabel = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -59,8 +65,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.armorClass = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.BioPage = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -69,14 +74,8 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.BioPage = new System.Windows.Forms.TabPage();
             this.SpellsPage = new System.Windows.Forms.TabPage();
-            this.StrengthBox = new System.Windows.Forms.GroupBox();
-            this.DexBox = new System.Windows.Forms.GroupBox();
-            this.ConBox = new System.Windows.Forms.GroupBox();
-            this.IntelligenceBox = new System.Windows.Forms.GroupBox();
-            this.WisdomBox = new System.Windows.Forms.GroupBox();
-            this.CharismaBox = new System.Windows.Forms.GroupBox();
+            this.CantripsGroupBox = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -87,10 +86,12 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.BioPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.SpellsPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,12 +117,6 @@
             this.CorePage.Controls.Add(this.groupBox16);
             this.CorePage.Controls.Add(this.combatStats);
             this.CorePage.Controls.Add(this.groupBox7);
-            this.CorePage.Controls.Add(this.groupBox6);
-            this.CorePage.Controls.Add(this.groupBox5);
-            this.CorePage.Controls.Add(this.groupBox4);
-            this.CorePage.Controls.Add(this.groupBox3);
-            this.CorePage.Controls.Add(this.groupBox2);
-            this.CorePage.Controls.Add(this.groupBox1);
             this.CorePage.Location = new System.Drawing.Point(4, 22);
             this.CorePage.Name = "CorePage";
             this.CorePage.Padding = new System.Windows.Forms.Padding(3);
@@ -130,34 +125,59 @@
             this.CorePage.Text = "Core";
             this.CorePage.UseVisualStyleBackColor = true;
             // 
-            // HitDiceLabel
+            // CharismaBox
             // 
-            this.HitDiceLabel.AutoSize = true;
-            this.HitDiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HitDiceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HitDiceLabel.Location = new System.Drawing.Point(48, 24);
-            this.HitDiceLabel.Name = "HitDiceLabel";
-            this.HitDiceLabel.Size = new System.Drawing.Size(39, 42);
-            this.HitDiceLabel.TabIndex = 11;
-            this.HitDiceLabel.Text = "0";
-            this.HitDiceLabel.Click += new System.EventHandler(this.HitDiceLabel_Click);
+            this.CharismaBox.Location = new System.Drawing.Point(6, 441);
+            this.CharismaBox.Name = "CharismaBox";
+            this.CharismaBox.Size = new System.Drawing.Size(84, 80);
+            this.CharismaBox.TabIndex = 11;
+            this.CharismaBox.TabStop = false;
+            this.CharismaBox.Text = "Charisma";
             // 
-            // comboBox1
+            // WisdomBox
             // 
-            this.comboBox1.DisplayMember = "sds";
-            this.comboBox1.DropDownWidth = 50;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "D4",
-            "D6",
-            "D8",
-            "D10",
-            "D12"});
-            this.comboBox1.Location = new System.Drawing.Point(111, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(20, 21);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.WisdomBox.Location = new System.Drawing.Point(6, 355);
+            this.WisdomBox.Name = "WisdomBox";
+            this.WisdomBox.Size = new System.Drawing.Size(84, 80);
+            this.WisdomBox.TabIndex = 11;
+            this.WisdomBox.TabStop = false;
+            this.WisdomBox.Text = "Wisdom";
+            // 
+            // IntelligenceBox
+            // 
+            this.IntelligenceBox.Location = new System.Drawing.Point(6, 269);
+            this.IntelligenceBox.Name = "IntelligenceBox";
+            this.IntelligenceBox.Size = new System.Drawing.Size(84, 80);
+            this.IntelligenceBox.TabIndex = 11;
+            this.IntelligenceBox.TabStop = false;
+            this.IntelligenceBox.Text = "Intelligence";
+            // 
+            // ConBox
+            // 
+            this.ConBox.Location = new System.Drawing.Point(6, 183);
+            this.ConBox.Name = "ConBox";
+            this.ConBox.Size = new System.Drawing.Size(84, 80);
+            this.ConBox.TabIndex = 11;
+            this.ConBox.TabStop = false;
+            this.ConBox.Text = "Constitution";
+            // 
+            // DexBox
+            // 
+            this.DexBox.Location = new System.Drawing.Point(6, 97);
+            this.DexBox.Name = "DexBox";
+            this.DexBox.Size = new System.Drawing.Size(84, 80);
+            this.DexBox.TabIndex = 11;
+            this.DexBox.TabStop = false;
+            this.DexBox.Text = "Dexterity";
+            // 
+            // StrengthBox
+            // 
+            this.StrengthBox.Location = new System.Drawing.Point(6, 11);
+            this.StrengthBox.Name = "StrengthBox";
+            this.StrengthBox.Size = new System.Drawing.Size(84, 80);
+            this.StrengthBox.TabIndex = 10;
+            this.StrengthBox.TabStop = false;
+            this.StrengthBox.Text = "Strength";
             // 
             // groupBox17
             // 
@@ -174,13 +194,13 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode3.Name = "Equipment";
-            treeNode3.Text = "Equipment";
-            treeNode4.Name = "Weapons";
-            treeNode4.Text = "Weapons";
+            treeNode1.Name = "Equipment";
+            treeNode1.Text = "Equipment";
+            treeNode2.Name = "Weapons";
+            treeNode2.Text = "Weapons";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
+            treeNode1,
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(261, 308);
             this.treeView1.TabIndex = 1;
             // 
@@ -286,6 +306,35 @@
             this.HitDiceBox.TabIndex = 5;
             this.HitDiceBox.TabStop = false;
             this.HitDiceBox.Text = "Hit Dice";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "sds";
+            this.comboBox1.DropDownWidth = 50;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "D4",
+            "D6",
+            "D8",
+            "D10",
+            "D12"});
+            this.comboBox1.Location = new System.Drawing.Point(111, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(20, 21);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // HitDiceLabel
+            // 
+            this.HitDiceLabel.AutoSize = true;
+            this.HitDiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HitDiceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.HitDiceLabel.Location = new System.Drawing.Point(48, 24);
+            this.HitDiceLabel.Name = "HitDiceLabel";
+            this.HitDiceLabel.Size = new System.Drawing.Size(39, 42);
+            this.HitDiceLabel.TabIndex = 11;
+            this.HitDiceLabel.Text = "0";
+            this.HitDiceLabel.Click += new System.EventHandler(this.HitDiceLabel_Click);
             // 
             // groupBox13
             // 
@@ -398,31 +447,27 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Features and Traits";
             // 
-            // groupBox6
+            // BioPage
             // 
-            this.groupBox6.Location = new System.Drawing.Point(634, 432);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(99, 100);
-            this.groupBox6.TabIndex = 5;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Resource";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(533, 431);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(95, 100);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Resource";
+            this.BioPage.Controls.Add(this.groupBox4);
+            this.BioPage.Controls.Add(this.groupBox3);
+            this.BioPage.Controls.Add(this.groupBox2);
+            this.BioPage.Controls.Add(this.groupBox1);
+            this.BioPage.Location = new System.Drawing.Point(4, 22);
+            this.BioPage.Name = "BioPage";
+            this.BioPage.Padding = new System.Windows.Forms.Padding(3);
+            this.BioPage.Size = new System.Drawing.Size(739, 946);
+            this.BioPage.TabIndex = 1;
+            this.BioPage.Text = "Bio";
+            this.BioPage.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.richTextBox4);
-            this.groupBox4.Location = new System.Drawing.Point(533, 325);
+            this.groupBox4.Location = new System.Drawing.Point(246, 342);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Flaws";
             // 
@@ -437,10 +482,10 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.richTextBox3);
-            this.groupBox3.Location = new System.Drawing.Point(533, 219);
+            this.groupBox3.Location = new System.Drawing.Point(246, 236);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bonds";
             // 
@@ -455,10 +500,10 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.richTextBox2);
-            this.groupBox2.Location = new System.Drawing.Point(533, 112);
+            this.groupBox2.Location = new System.Drawing.Point(246, 130);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ideals";
             // 
@@ -473,10 +518,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(533, 6);
+            this.groupBox1.Location = new System.Drawing.Point(246, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personality Traits";
             // 
@@ -488,18 +533,9 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // BioPage
-            // 
-            this.BioPage.Location = new System.Drawing.Point(4, 22);
-            this.BioPage.Name = "BioPage";
-            this.BioPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BioPage.Size = new System.Drawing.Size(739, 946);
-            this.BioPage.TabIndex = 1;
-            this.BioPage.Text = "Bio";
-            this.BioPage.UseVisualStyleBackColor = true;
-            // 
             // SpellsPage
             // 
+            this.SpellsPage.Controls.Add(this.CantripsGroupBox);
             this.SpellsPage.Location = new System.Drawing.Point(4, 22);
             this.SpellsPage.Name = "SpellsPage";
             this.SpellsPage.Size = new System.Drawing.Size(739, 946);
@@ -507,59 +543,17 @@
             this.SpellsPage.Text = "Spells";
             this.SpellsPage.UseVisualStyleBackColor = true;
             // 
-            // StrengthBox
+            // CantripsGroupBox
             // 
-            this.StrengthBox.Location = new System.Drawing.Point(6, 11);
-            this.StrengthBox.Name = "StrengthBox";
-            this.StrengthBox.Size = new System.Drawing.Size(84, 80);
-            this.StrengthBox.TabIndex = 10;
-            this.StrengthBox.TabStop = false;
-            this.StrengthBox.Text = "Strength";
-            // 
-            // DexBox
-            // 
-            this.DexBox.Location = new System.Drawing.Point(6, 97);
-            this.DexBox.Name = "DexBox";
-            this.DexBox.Size = new System.Drawing.Size(84, 80);
-            this.DexBox.TabIndex = 11;
-            this.DexBox.TabStop = false;
-            this.DexBox.Text = "Dexterity";
-            // 
-            // ConBox
-            // 
-            this.ConBox.Location = new System.Drawing.Point(6, 183);
-            this.ConBox.Name = "ConBox";
-            this.ConBox.Size = new System.Drawing.Size(84, 80);
-            this.ConBox.TabIndex = 11;
-            this.ConBox.TabStop = false;
-            this.ConBox.Text = "Constitution";
-            // 
-            // IntelligenceBox
-            // 
-            this.IntelligenceBox.Location = new System.Drawing.Point(6, 269);
-            this.IntelligenceBox.Name = "IntelligenceBox";
-            this.IntelligenceBox.Size = new System.Drawing.Size(84, 80);
-            this.IntelligenceBox.TabIndex = 11;
-            this.IntelligenceBox.TabStop = false;
-            this.IntelligenceBox.Text = "Intelligence";
-            // 
-            // WisdomBox
-            // 
-            this.WisdomBox.Location = new System.Drawing.Point(6, 355);
-            this.WisdomBox.Name = "WisdomBox";
-            this.WisdomBox.Size = new System.Drawing.Size(84, 80);
-            this.WisdomBox.TabIndex = 11;
-            this.WisdomBox.TabStop = false;
-            this.WisdomBox.Text = "Wisdom";
-            // 
-            // CharismaBox
-            // 
-            this.CharismaBox.Location = new System.Drawing.Point(6, 441);
-            this.CharismaBox.Name = "CharismaBox";
-            this.CharismaBox.Size = new System.Drawing.Size(84, 80);
-            this.CharismaBox.TabIndex = 11;
-            this.CharismaBox.TabStop = false;
-            this.CharismaBox.Text = "Charisma";
+            this.CantripsGroupBox.Location = new System.Drawing.Point(3, 35);
+            this.CantripsGroupBox.Name = "CantripsGroupBox";
+            this.CantripsGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.CantripsGroupBox.TabIndex = 1;
+            this.CantripsGroupBox.TabStop = false;
+            this.CantripsGroupBox.Text = "Cantrips";
+            this.CantripsGroupBox.Enter += new System.EventHandler(this.CantripsGroupBox_Enter);
+            
+            this.CantripsGroupBox.MouseHover += new System.EventHandler(this.CantripsGroupBox_MouseHover);
             // 
             // Form1
             // 
@@ -585,10 +579,12 @@
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.BioPage.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.SpellsPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -598,12 +594,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage CorePage;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabPage BioPage;
         private System.Windows.Forms.TabPage SpellsPage;
         private System.Windows.Forms.GroupBox groupBox17;
@@ -629,10 +619,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.TextBox MaxHitPoints;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label HitDiceLabel;
         private System.Windows.Forms.GroupBox CharismaBox;
@@ -641,6 +627,15 @@
         private System.Windows.Forms.GroupBox ConBox;
         private System.Windows.Forms.GroupBox DexBox;
         private System.Windows.Forms.GroupBox StrengthBox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox CantripsGroupBox;
     }
 }
 
