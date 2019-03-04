@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
@@ -49,7 +49,10 @@
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.CurHitPoints = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CurHitPoints = new System.Windows.Forms.NumericUpDown();
+            this.MaxHitPoints = new System.Windows.Forms.NumericUpDown();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -58,17 +61,15 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.BioPage = new System.Windows.Forms.TabPage();
             this.SpellsPage = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.MaxHitPoints = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -76,12 +77,13 @@
             this.combatStats.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -130,13 +132,13 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode13.Name = "Equipment";
-            treeNode13.Text = "Equipment";
-            treeNode14.Name = "Weapons";
-            treeNode14.Text = "Weapons";
+            treeNode1.Name = "Equipment";
+            treeNode1.Text = "Equipment";
+            treeNode2.Name = "Weapons";
+            treeNode2.Text = "Weapons";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
+            treeNode1,
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(261, 308);
             this.treeView1.TabIndex = 1;
             // 
@@ -263,9 +265,10 @@
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.numericUpDown1);
-            this.groupBox12.Controls.Add(this.MaxHitPoints);
+            this.groupBox12.Controls.Add(this.label3);
+            this.groupBox12.Controls.Add(this.label2);
             this.groupBox12.Controls.Add(this.CurHitPoints);
+            this.groupBox12.Controls.Add(this.MaxHitPoints);
             this.groupBox12.Controls.Add(this.trackBar1);
             this.groupBox12.Location = new System.Drawing.Point(7, 106);
             this.groupBox12.Name = "groupBox12";
@@ -274,15 +277,57 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Currernt Hit Points";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(134, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Max";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(-1, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Current";
+            // 
             // CurHitPoints
             // 
-            this.CurHitPoints.AutoSize = true;
             this.CurHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurHitPoints.Location = new System.Drawing.Point(7, 67);
+            this.CurHitPoints.Location = new System.Drawing.Point(43, 67);
+            this.CurHitPoints.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.CurHitPoints.Name = "CurHitPoints";
-            this.CurHitPoints.Size = new System.Drawing.Size(29, 31);
-            this.CurHitPoints.TabIndex = 11;
-            this.CurHitPoints.Text = "0";
+            this.CurHitPoints.Size = new System.Drawing.Size(87, 38);
+            this.CurHitPoints.TabIndex = 15;
+            this.CurHitPoints.ValueChanged += new System.EventHandler(this.CurHitPoints_ValueChanged);
+            // 
+            // MaxHitPoints
+            // 
+            this.MaxHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaxHitPoints.Location = new System.Drawing.Point(170, 67);
+            this.MaxHitPoints.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.MaxHitPoints.Name = "MaxHitPoints";
+            this.MaxHitPoints.Size = new System.Drawing.Size(85, 38);
+            this.MaxHitPoints.TabIndex = 14;
+            this.MaxHitPoints.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.MaxHitPoints.ValueChanged += new System.EventHandler(this.MaxHitPoints_ValueChanged);
             // 
             // trackBar1
             // 
@@ -357,6 +402,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Flaws";
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox4.TabIndex = 0;
+            this.richTextBox4.Text = "";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.richTextBox3);
@@ -366,6 +419,14 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bonds";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(187, 80);
+            this.richTextBox3.TabIndex = 0;
+            this.richTextBox3.Text = "";
             // 
             // groupBox2
             // 
@@ -377,6 +438,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ideals";
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox2.TabIndex = 0;
+            this.richTextBox2.Text = "";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
@@ -386,6 +455,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personality Traits";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
             // BioPage
             // 
@@ -405,61 +482,6 @@
             this.SpellsPage.TabIndex = 2;
             this.SpellsPage.Text = "Spells";
             this.SpellsPage.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(187, 80);
-            this.richTextBox3.TabIndex = 0;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox4.TabIndex = 0;
-            this.richTextBox4.Text = "";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
-            this.numericUpDown1.TabIndex = 14;
-            // 
-            // MaxHitPoints
-            // 
-            this.MaxHitPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxHitPoints.Location = new System.Drawing.Point(161, 67);
-            this.MaxHitPoints.Name = "MaxHitPoints";
-            this.MaxHitPoints.Size = new System.Drawing.Size(94, 38);
-            this.MaxHitPoints.TabIndex = 13;
-            this.MaxHitPoints.Text = "40";
-            this.MaxHitPoints.TextChanged += new System.EventHandler(this.MaxHitPoints_TextChanged);
             // 
             // Form1
             // 
@@ -481,12 +503,13 @@
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,7 +540,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Label CurHitPoints;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -525,12 +547,14 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox MaxHitPoints;
+        private System.Windows.Forms.NumericUpDown MaxHitPoints;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.NumericUpDown CurHitPoints;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
