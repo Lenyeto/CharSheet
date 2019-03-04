@@ -29,11 +29,6 @@ namespace CharacterSheet
             inventory = new Inventory();
         }
 
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
 
@@ -125,6 +120,42 @@ namespace CharacterSheet
         {
 
         }
+        private void HitDiceLabel_Click(object sender, EventArgs e)
+        {
+            HitDiceLabel.Text = comboBox1.Text;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+            String mString = comboBox1.Text.Substring(1);
+            HitDiceLabel.Text = mString;
+        }
+
+        private void CantripsGroupBox_MouseHover(object sender, EventArgs e)
+        {
+
+
+            //this.Controls.Add(testLabel); //got this from the internet. no idea
+            //testLabel.AutoSize = true;
+
+            int x = MousePosition.X / 2;
+            int y = MousePosition.Y / 2;
+
+            Point testPos = new Point(x, y);
+           
+            toolTip.Show(this, testPos);
+            
+            CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
+            
+        }
+        private void CantripsGroupBox_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+     
     }
 
     class WebBrowserToolTip2 : ToolStripDropDown
