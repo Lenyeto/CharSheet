@@ -206,13 +206,6 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode5.Name = "Equipment";
-            treeNode5.Text = "Equipment";
-            treeNode6.Name = "Weapons";
-            treeNode6.Text = "Weapons";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(241, 308);
             this.treeView1.TabIndex = 1;
             // 

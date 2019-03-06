@@ -203,8 +203,9 @@ namespace CharacterSheet
 
         private void CantripsGroupBox_CursorChanged(object sender, EventArgs e)
         {
-            
+
             CantripsGroupBox.Text = "TESTING";
+        }
 
         private void ToolTipUpdate(Boolean visible)
         {
