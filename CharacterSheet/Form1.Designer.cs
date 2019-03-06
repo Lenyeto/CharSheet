@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
@@ -82,8 +82,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SpellsPage = new System.Windows.Forms.TabPage();
+            this.testBox = new System.Windows.Forms.GroupBox();
             this.CantripsGroupBox = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -603,6 +605,8 @@
             // 
             // SpellsPage
             // 
+            this.SpellsPage.Controls.Add(this.groupBox5);
+            this.SpellsPage.Controls.Add(this.testBox);
             this.SpellsPage.Controls.Add(this.CantripsGroupBox);
             this.SpellsPage.Location = new System.Drawing.Point(4, 22);
             this.SpellsPage.Name = "SpellsPage";
@@ -610,6 +614,18 @@
             this.SpellsPage.TabIndex = 2;
             this.SpellsPage.Text = "Spells";
             this.SpellsPage.UseVisualStyleBackColor = true;
+            this.SpellsPage.MouseHover += new System.EventHandler(this.SpellsPage_MouseHover);
+            // 
+            // testBox
+            // 
+            this.testBox.Location = new System.Drawing.Point(421, 48);
+            this.testBox.Name = "testBox";
+            this.testBox.Size = new System.Drawing.Size(200, 100);
+            this.testBox.TabIndex = 2;
+            this.testBox.TabStop = false;
+            this.testBox.Text = "groupBox5";
+            this.testBox.Visible = false;
+            this.testBox.Enter += new System.EventHandler(this.testBox_Enter);
             // 
             // CantripsGroupBox
             // 
@@ -621,6 +637,7 @@
             this.CantripsGroupBox.Text = "Cantrips";
             this.CantripsGroupBox.CursorChanged += new System.EventHandler(this.CantripsGroupBox_CursorChanged);
             this.CantripsGroupBox.Enter += new System.EventHandler(this.CantripsGroupBox_Enter);
+            this.CantripsGroupBox.Leave += new System.EventHandler(this.CantripsGroupBox_Leave);
             this.CantripsGroupBox.MouseHover += new System.EventHandler(this.CantripsGroupBox_MouseHover);
             // 
             // numericUpDown1
@@ -635,6 +652,16 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
             this.numericUpDown1.TabIndex = 14;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Location = new System.Drawing.Point(109, 211);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Cantrips";
+            this.groupBox5.MouseHover += new System.EventHandler(this.groupBox5_MouseHover);
             // 
             // Form1
             // 
@@ -726,6 +753,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.GroupBox testBox;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 

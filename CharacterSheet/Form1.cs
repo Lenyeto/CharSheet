@@ -15,7 +15,8 @@ namespace CharacterSheet
         private WebBrowser web;
         private WebBrowserToolTip2 toolTip;
         private Inventory inventory;
-
+        ToolTip secondForm = new ToolTip();
+        
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +28,9 @@ namespace CharacterSheet
             toolTip = new WebBrowserToolTip2(web);
 
             inventory = new Inventory();
+
+            
+
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -126,10 +130,15 @@ namespace CharacterSheet
 
         private void CantripsGroupBox_MouseHover(object sender, EventArgs e)
         {
+            //CantripsGroupBox.Text = secondForm.ToString();
 
+            //secondForm.MouseLeave = true {= PointToClient(Cursor.Position); 
+            //secondForm.Location = PointToClient(Cursor.Position);
+            //secondForm.AutoSize = true;
+            //secondForm.Size = secondForm.PreferredSize;
 
-            //this.Controls.Add(testLabel); //got this from the internet. no idea
             //testLabel.AutoSize = true;
+            //testBox.Location = Cursor.Position;
 
             //int x = MousePosition.X / 2;
             //int y = MousePosition.Y / 2;
@@ -139,10 +148,45 @@ namespace CharacterSheet
             //toolTip.Show(this, PointToClient(Cursor.Position));
             
             //CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
-            
+            //toolTip.Show(this, PointToClient(Cursor.Position));
+
+
+
+            CantripsGroupBox.Text = Cursor.Position.ToString();
+            ToolTipUpdate(true);
+
+
+
+
+
+
         }
         private void CantripsGroupBox_Enter(object sender, EventArgs e)
         {
+            
+            
+            
+        }
+
+        private void CantripsGroupBox_Leave(object sender, EventArgs e)
+        {
+            testBox.Visible = false;
+        }
+
+        private void testBox_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpellsPage_MouseHover(object sender, EventArgs e)
+        {
+            ToolTipUpdate(false);
+        }
+
+        private void groupBox5_MouseHover(object sender, EventArgs e)
+        {
+            ToolTipUpdate(true);
+            
             
         }
 
@@ -161,6 +205,11 @@ namespace CharacterSheet
         {
             
             CantripsGroupBox.Text = "TESTING";
+
+        private void ToolTipUpdate(Boolean visible)
+        {
+            testBox.Visible = visible;
+            testBox.Location = PointToClient(Cursor.Position);
         }
     }
 
