@@ -30,8 +30,8 @@ namespace CharacterSheet
 
             inventory = new Inventory();
 
-            
 
+            
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -48,22 +48,25 @@ namespace CharacterSheet
 
             //MOUSE
             Thread mouseThread = new Thread(MouseTracker);
+
+            //will shut the thread down automatical on closing app
+            mouseThread.IsBackground = true;    
             mouseThread.Start();
         }
 
-        //RUNS ON A SEPERATE THREAD. I do not fully understand this invoking business, 
-        //but it was necessary
+        //RUNS ON A SEPERATE THREAD. 
+        //I do not fully understand this invoking business, but it was necessary
         private void MouseTracker()
         {
             while(true)
             {
-                int x = MousePosition.X;
-                int y = MousePosition.Y;
+                
+
                 if (testBox.InvokeRequired)
                 {
                     testBox.Invoke(new MethodInvoker(delegate
                     {
-                        testBox.Location = PointToClient(Cursor.Position);
+                        testBox.Location = PointToClient(MousePosition);
                     }));
                 }
                 
@@ -225,29 +228,16 @@ namespace CharacterSheet
             toolStripTextBox1.Text = "";
         }
 
-        private void CantripsGroupBox_CursorChanged(object sender, EventArgs e)
-        {
-
-            CantripsGroupBox.Text = "TESTING";
-        }
+       
 
         private void ToolTipUpdate(Boolean visible)
         {
             
             testBox.Visible = visible;
+            testBox.BringToFront(); //Could put this in the init for this form. here just in
+                                    //in case something else takes the front at some point
+           
 
-            /*
-            int x = Cursor.Position.X - CantripsGroupBox.Size.Width;
-            int y = Cursor.Position.Y;
-            Point anchor = new Point(x, y);
-
-            //SpellsPage - this location
-            testBox.Location = SpellsPage.PointToClient(anchor);
-            //testBox.Location = PointToClient(anchor);
-            */
-
-            //testBox.Location = PointToClient(Cursor.Position); //old
-            
 
         }
     }

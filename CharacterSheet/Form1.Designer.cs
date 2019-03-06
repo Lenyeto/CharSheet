@@ -619,10 +619,11 @@
             // 
             // testBox
             // 
+            this.testBox.BackColor = System.Drawing.Color.LightSalmon;
             this.testBox.Location = new System.Drawing.Point(590, 3);
             this.testBox.Name = "testBox";
             this.testBox.Size = new System.Drawing.Size(200, 100);
-            this.testBox.TabIndex = 2;
+            this.testBox.TabIndex = 4;
             this.testBox.TabStop = false;
             this.testBox.Text = "groupBox5";
             this.testBox.Visible = false;
@@ -630,13 +631,12 @@
             // 
             // CantripsGroupBox
             // 
-            this.CantripsGroupBox.Location = new System.Drawing.Point(3, 35);
+            this.CantripsGroupBox.Location = new System.Drawing.Point(3, 3);
             this.CantripsGroupBox.Name = "CantripsGroupBox";
-            this.CantripsGroupBox.Size = new System.Drawing.Size(200, 100);
+            this.CantripsGroupBox.Size = new System.Drawing.Size(200, 202);
             this.CantripsGroupBox.TabIndex = 1;
             this.CantripsGroupBox.TabStop = false;
             this.CantripsGroupBox.Text = "Cantrips";
-            this.CantripsGroupBox.CursorChanged += new System.EventHandler(this.CantripsGroupBox_CursorChanged);
             this.CantripsGroupBox.Enter += new System.EventHandler(this.CantripsGroupBox_Enter);
             this.CantripsGroupBox.Leave += new System.EventHandler(this.CantripsGroupBox_Leave);
             this.CantripsGroupBox.MouseHover += new System.EventHandler(this.CantripsGroupBox_MouseHover);
