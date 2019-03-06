@@ -61,7 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CurHitPoints = new System.Windows.Forms.NumericUpDown();
             this.MaxHitPoints = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -78,6 +77,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SpellsPage = new System.Windows.Forms.TabPage();
             this.CantripsGroupBox = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -88,7 +88,6 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.BioPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -96,6 +95,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SpellsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -392,18 +392,6 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Current";
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
-            this.numericUpDown1.TabIndex = 14;
             // 
             // CurHitPoints
             // 
@@ -569,14 +557,6 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // BioPage
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
             // SpellsPage
             // 
             this.SpellsPage.Controls.Add(this.CantripsGroupBox);
@@ -596,8 +576,21 @@
             this.CantripsGroupBox.TabStop = false;
             this.CantripsGroupBox.Text = "Cantrips";
             this.CantripsGroupBox.Enter += new System.EventHandler(this.CantripsGroupBox_Enter);
-            
+            this.CantripsGroupBox.Leave += new System.EventHandler(this.CantripsGroupBox_Leave);
             this.CantripsGroupBox.MouseHover += new System.EventHandler(this.CantripsGroupBox_MouseHover);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
+            this.numericUpDown1.TabIndex = 14;
             // 
             // Form1
             // 
@@ -623,7 +616,6 @@
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.BioPage.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -631,6 +623,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.SpellsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }

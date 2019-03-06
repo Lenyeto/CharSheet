@@ -15,7 +15,8 @@ namespace CharacterSheet
         private WebBrowser web;
         private WebBrowserToolTip2 toolTip;
         private Inventory inventory;
-
+        ToolTip secondForm = new ToolTip();
+        
         public Form1()
         {
             InitializeComponent();
@@ -135,8 +136,13 @@ namespace CharacterSheet
 
         private void CantripsGroupBox_MouseHover(object sender, EventArgs e)
         {
-
-
+            CantripsGroupBox.Text = secondForm.ToString();
+            //If the previous form was exited out of, we need to recreate it
+            if (secondForm == null)
+            {
+                ToolTip secondForm = new ToolTip();
+            }
+            secondForm.Show();
             //this.Controls.Add(testLabel); //got this from the internet. no idea
             //testLabel.AutoSize = true;
 
@@ -147,7 +153,7 @@ namespace CharacterSheet
             
             toolTip.Show(this, PointToClient(Cursor.Position));
             
-            CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
+            //CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
             
         }
         private void CantripsGroupBox_Enter(object sender, EventArgs e)
@@ -155,7 +161,10 @@ namespace CharacterSheet
             
         }
 
-     
+        private void CantripsGroupBox_Leave(object sender, EventArgs e)
+        {
+            secondForm.Hide();
+        }
     }
 
     class WebBrowserToolTip2 : ToolStripDropDown
