@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace CharacterSheet
 {
@@ -44,6 +45,29 @@ namespace CharacterSheet
             
             if (web.Document.Body != null)
             web.Document.Body.Style = "font-size:x-small";
+
+            //MOUSE
+            Thread mouseThread = new Thread(MouseTracker);
+            mouseThread.Start();
+        }
+
+        //RUNS ON A SEPERATE THREAD. I do not fully understand this invoking business, 
+        //but it was necessary
+        private void MouseTracker()
+        {
+            while(true)
+            {
+                int x = MousePosition.X;
+                int y = MousePosition.Y;
+                if (testBox.InvokeRequired)
+                {
+                    testBox.Invoke(new MethodInvoker(delegate
+                    {
+                        testBox.Location = PointToClient(Cursor.Position);
+                    }));
+                }
+                
+            }
         }
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
@@ -209,8 +233,22 @@ namespace CharacterSheet
 
         private void ToolTipUpdate(Boolean visible)
         {
+            
             testBox.Visible = visible;
-            testBox.Location = PointToClient(Cursor.Position);
+
+            /*
+            int x = Cursor.Position.X - CantripsGroupBox.Size.Width;
+            int y = Cursor.Position.Y;
+            Point anchor = new Point(x, y);
+
+            //SpellsPage - this location
+            testBox.Location = SpellsPage.PointToClient(anchor);
+            //testBox.Location = PointToClient(anchor);
+            */
+
+            //testBox.Location = PointToClient(Cursor.Position); //old
+            
+
         }
     }
 

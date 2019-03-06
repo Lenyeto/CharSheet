@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
@@ -82,10 +80,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SpellsPage = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.testBox = new System.Windows.Forms.GroupBox();
             this.CantripsGroupBox = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -609,9 +607,19 @@
             this.SpellsPage.UseVisualStyleBackColor = true;
             this.SpellsPage.MouseHover += new System.EventHandler(this.SpellsPage_MouseHover);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Location = new System.Drawing.Point(109, 211);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Cantrips";
+            this.groupBox5.MouseHover += new System.EventHandler(this.groupBox5_MouseHover);
+            // 
             // testBox
             // 
-            this.testBox.Location = new System.Drawing.Point(421, 48);
+            this.testBox.Location = new System.Drawing.Point(590, 3);
             this.testBox.Name = "testBox";
             this.testBox.Size = new System.Drawing.Size(200, 100);
             this.testBox.TabIndex = 2;
@@ -645,16 +653,6 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
             this.numericUpDown1.TabIndex = 14;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(109, 211);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(200, 100);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Cantrips";
-            this.groupBox5.MouseHover += new System.EventHandler(this.groupBox5_MouseHover);
             // 
             // Form1
             // 
