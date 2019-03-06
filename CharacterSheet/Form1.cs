@@ -88,16 +88,7 @@ namespace CharacterSheet
 
         private void toolStripTextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (toolStripTextBox1.Text == "")
-                    return;
-                if (treeView1.SelectedNode != null)
-                {
-                    treeView1.SelectedNode.Nodes.Add(toolStripTextBox1.Text);
-                    toolStripTextBox1.Text = "";
-                }
-            }
+
         }
 
         private void MaxHitPoints_ValueChanged(object sender, EventArgs e)
@@ -122,7 +113,7 @@ namespace CharacterSheet
         }
         private void HitDiceLabel_Click(object sender, EventArgs e)
         {
-            HitDiceLabel.Text = comboBox1.Text;
+            //HitDiceLabel.Text = comboBox1.Text;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,14 +131,14 @@ namespace CharacterSheet
             //this.Controls.Add(testLabel); //got this from the internet. no idea
             //testLabel.AutoSize = true;
 
-            int x = MousePosition.X / 2;
-            int y = MousePosition.Y / 2;
+            //int x = MousePosition.X / 2;
+            //int y = MousePosition.Y / 2;
             
-            Point testPos = new Point(x, y);
+            //Point testPos = new Point(x, y);
             
-            toolTip.Show(this, PointToClient(Cursor.Position));
+            //toolTip.Show(this, PointToClient(Cursor.Position));
             
-            CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
+            //CantripsGroupBox.Text = MousePosition.X.ToString() + " " + MousePosition.Y.ToString();
             
         }
         private void CantripsGroupBox_Enter(object sender, EventArgs e)
@@ -155,7 +146,22 @@ namespace CharacterSheet
             
         }
 
-     
+        private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (toolStripTextBox1.Text == "")
+                return;
+            if (toolStripComboBox1.Text == "Equipment")
+                treeView1.Nodes[0].Nodes.Add(toolStripTextBox1.Text);
+            else
+                treeView1.Nodes[1].Nodes.Add(toolStripTextBox1.Text);
+            toolStripTextBox1.Text = "";
+        }
+
+        private void CantripsGroupBox_CursorChanged(object sender, EventArgs e)
+        {
+            
+            CantripsGroupBox.Text = "TESTING";
+        }
     }
 
     class WebBrowserToolTip2 : ToolStripDropDown

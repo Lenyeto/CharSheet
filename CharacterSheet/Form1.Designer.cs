@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Equipment");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Equipment");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Weapons");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CorePage = new System.Windows.Forms.TabPage();
@@ -43,11 +43,17 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.combatStats = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -61,7 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.CurHitPoints = new System.Windows.Forms.NumericUpDown();
             this.MaxHitPoints = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -78,6 +83,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SpellsPage = new System.Windows.Forms.TabPage();
             this.CantripsGroupBox = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.CorePage.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -88,7 +94,6 @@
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.BioPage.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -96,6 +101,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SpellsPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -106,7 +112,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(747, 972);
+            this.tabControl1.Size = new System.Drawing.Size(801, 813);
             this.tabControl1.TabIndex = 0;
             // 
             // CorePage
@@ -124,7 +130,7 @@
             this.CorePage.Location = new System.Drawing.Point(4, 22);
             this.CorePage.Name = "CorePage";
             this.CorePage.Padding = new System.Windows.Forms.Padding(3);
-            this.CorePage.Size = new System.Drawing.Size(739, 946);
+            this.CorePage.Size = new System.Drawing.Size(793, 787);
             this.CorePage.TabIndex = 0;
             this.CorePage.Text = "Core";
             this.CorePage.UseVisualStyleBackColor = true;
@@ -187,9 +193,9 @@
             // 
             this.groupBox17.Controls.Add(this.treeView1);
             this.groupBox17.Controls.Add(this.toolStrip1);
-            this.groupBox17.Location = new System.Drawing.Point(253, 581);
+            this.groupBox17.Location = new System.Drawing.Point(533, 419);
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(274, 359);
+            this.groupBox17.Size = new System.Drawing.Size(254, 359);
             this.groupBox17.TabIndex = 9;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Equipment";
@@ -198,27 +204,29 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(7, 45);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Equipment";
-            treeNode1.Text = "Equipment";
-            treeNode2.Name = "Weapons";
-            treeNode2.Text = "Weapons";
+            treeNode5.Name = "Equipment";
+            treeNode5.Text = "Equipment";
+            treeNode6.Name = "Weapons";
+            treeNode6.Text = "Weapons";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(261, 308);
+            treeNode5,
+            treeNode6});
+            this.treeView1.Size = new System.Drawing.Size(241, 308);
             this.treeView1.TabIndex = 1;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
-            this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripLabel1,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripSeparator3,
+            this.toolStripLabel3,
+            this.toolStripLabel4});
             this.toolStrip1.Location = new System.Drawing.Point(3, 16);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(268, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(248, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -226,12 +234,23 @@
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
+            this.toolStripTextBox2,
+            this.toolStripTextBox1,
+            this.toolStripComboBox1,
+            this.toolStripSeparator2,
+            this.addItemToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Enabled = false;
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "Name";
             // 
             // toolStripTextBox1
             // 
@@ -239,15 +258,25 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.toolStripTextBox1_KeyDown);
             // 
-            // toolStripButton1
+            // toolStripComboBox1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "Weapon",
+            "Equipment"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
+            // 
+            // addItemToolStripMenuItem
+            // 
+            this.addItemToolStripMenuItem.Name = "addItemToolStripMenuItem";
+            this.addItemToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addItemToolStripMenuItem.Text = "Add Item";
+            this.addItemToolStripMenuItem.Click += new System.EventHandler(this.addItemToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -265,6 +294,23 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(31, 22);
             this.toolStripLabel2.Text = "0 lbs";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(44, 22);
+            this.toolStripLabel3.Text = "Value : ";
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(30, 22);
+            this.toolStripLabel4.Text = "0 gp";
             // 
             // groupBox16
             // 
@@ -322,7 +368,7 @@
             "D8",
             "D10",
             "D12"});
-            this.comboBox1.Location = new System.Drawing.Point(111, 9);
+            this.comboBox1.Location = new System.Drawing.Point(104, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(20, 21);
             this.comboBox1.TabIndex = 10;
@@ -330,12 +376,11 @@
             // 
             // HitDiceLabel
             // 
-            this.HitDiceLabel.AutoSize = true;
             this.HitDiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HitDiceLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.HitDiceLabel.Location = new System.Drawing.Point(48, 24);
+            this.HitDiceLabel.Location = new System.Drawing.Point(10, 21);
             this.HitDiceLabel.Name = "HitDiceLabel";
-            this.HitDiceLabel.Size = new System.Drawing.Size(39, 42);
+            this.HitDiceLabel.Size = new System.Drawing.Size(88, 42);
             this.HitDiceLabel.TabIndex = 11;
             this.HitDiceLabel.Text = "0";
             this.HitDiceLabel.Click += new System.EventHandler(this.HitDiceLabel_Click);
@@ -392,18 +437,6 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Current";
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
-            this.numericUpDown1.TabIndex = 14;
             // 
             // CurHitPoints
             // 
@@ -441,7 +474,6 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(6, 19);
-            this.trackBar1.Maximum = 40;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(249, 45);
             this.trackBar1.TabIndex = 10;
@@ -476,9 +508,9 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Location = new System.Drawing.Point(533, 538);
+            this.groupBox7.Location = new System.Drawing.Point(533, 11);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(200, 402);
+            this.groupBox7.Size = new System.Drawing.Size(248, 402);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Features and Traits";
@@ -492,7 +524,7 @@
             this.BioPage.Location = new System.Drawing.Point(4, 22);
             this.BioPage.Name = "BioPage";
             this.BioPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BioPage.Size = new System.Drawing.Size(739, 946);
+            this.BioPage.Size = new System.Drawing.Size(793, 787);
             this.BioPage.TabIndex = 1;
             this.BioPage.Text = "Bio";
             this.BioPage.UseVisualStyleBackColor = true;
@@ -569,20 +601,12 @@
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // BioPage
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(187, 74);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
             // SpellsPage
             // 
             this.SpellsPage.Controls.Add(this.CantripsGroupBox);
             this.SpellsPage.Location = new System.Drawing.Point(4, 22);
             this.SpellsPage.Name = "SpellsPage";
-            this.SpellsPage.Size = new System.Drawing.Size(739, 946);
+            this.SpellsPage.Size = new System.Drawing.Size(793, 787);
             this.SpellsPage.TabIndex = 2;
             this.SpellsPage.Text = "Spells";
             this.SpellsPage.UseVisualStyleBackColor = true;
@@ -595,15 +619,28 @@
             this.CantripsGroupBox.TabIndex = 1;
             this.CantripsGroupBox.TabStop = false;
             this.CantripsGroupBox.Text = "Cantrips";
+            this.CantripsGroupBox.CursorChanged += new System.EventHandler(this.CantripsGroupBox_CursorChanged);
             this.CantripsGroupBox.Enter += new System.EventHandler(this.CantripsGroupBox_Enter);
-            
             this.CantripsGroupBox.MouseHover += new System.EventHandler(this.CantripsGroupBox_MouseHover);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(84, 65);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(69, 38);
+            this.numericUpDown1.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 996);
+            this.ClientSize = new System.Drawing.Size(827, 837);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -616,14 +653,12 @@
             this.toolStrip1.PerformLayout();
             this.combatStats.ResumeLayout(false);
             this.HitDiceBox.ResumeLayout(false);
-            this.HitDiceBox.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CurHitPoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaxHitPoints)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.BioPage.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -631,6 +666,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.SpellsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,7 +692,6 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
@@ -684,6 +719,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox CantripsGroupBox;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripMenuItem addItemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }
 
